@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello Adonis</title>
+    {{ css('css/style') }}
+    <style>
+        label[for="male"], label[for="female"] {
+            margin-bottom: 10px;
+            display: inline-block;
+            padding-left: 26px;
+            background: url(images/checks.png) no-repeat;
+            background-position: 0 -32px;
+            line-height: 2rpx;
+            cursor: pointer;
+        }
+
+        label[for="web"], label[for="photoshop"], label[for="madonna"] {
+            display: inline-block;
+            margin-bottom: 10px;
+            padding-left: 26px;
+            background: url(images/checks.png) no-repeat;
+            background-position: 0 -98px;
+            line-height: 24px;
+            cursor: pointer;
+        }
+
+        input[type="email"],
+        input[type="tel"] {
+            display: block;
+            margin-bottom: 20px;
+            padding: 10px 10px 10px 50px;
+            border: 0;
+            border-radius: 4px;
+            background: url(images/inputs.png) no-repeat;
+            background-color: #222;
+            font-size: 16px;
+            color: #fff;
+            float: left;
+            clear: both;
+        }
+
+        input[type="email"] {
+            background-position: 7px 8px;
+        }
+
+        input[type="tel"] {
+            background-position: 7px -58px;
+        }
+
+        select {
+            -webkit-appearance: none; /* Safari, Chrome, Opera, and Edge */
+            -moz-appearance: none; /* Moz for Firefox */    
+            appearance: none;
+
+            display: block;
+            margin: 30px 0;
+            padding: 10px 50px 10px 10px;
+            background: url(images/select.png) no-repeat 95% center;
+            background-color: #222;
+            color: #fff;
+            border-radius: 4px;
+            border: 2px solid #fff;
+            width: 280px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="images/logo.png" alt="Ninja">
+    </header>    
+    <form>
+        <a href="/variable">CSS Variables</a>        
+
+        <!-- Gender -->
+        <p>You are a ...</p>
+        <input type="radio" id="male" name="gender" />
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="gender" />
+        <label for="female">Female</label><br>
+
+        <!-- Interests -->
+        <p>Who is interested in...</p>
+        <input type="checkbox" id="web" />
+        <label for="web">Web development</label><br/>
+        <input type="checkbox" id="photoshop" />
+        <label for="photoshop">Photoshop</label><br/>
+        <input type="checkbox" id="madonna" />
+        <label for="madonna">Singing Madonna Songs</label><br><br>
+
+        <!-- Contact details -->
+        <fieldset>
+            <legend>Contact Info</legend>
+            <input type="email" autocomplete="email" placeholder="Email" required />
+            <span class="tick"></span>
+            <input type="tel" autocomplete="tel" placeholder="Phone number" required />
+            <span class="tick"></span>
+        </fieldset>
+
+        <!-- Prefered -->
+        <p>How would you like to be contacted?</p>
+        <select>
+            <option>By email</option>
+            <option>By telephone</option>
+            <input type="submit" value="Become a Ninja">
+        </select>
+    </form><br><br>
+    {{ script('js/index') }}
+</body>
+</html>
+
